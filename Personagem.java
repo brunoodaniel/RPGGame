@@ -20,16 +20,14 @@ public class Personagem {
 
     public void atacar(Inimigo inimigo){
         System.out.println("Você atacou o inimigo " + inimigo.getNome());
-        inimigo.setEnergia(getEnergia() - 10);
+        inimigo.setEnergia(getEnergia() - habilidade.getDano());
     }
     public void pegarItem(Item item){
         System.out.println("Você pegou o item " + item.getNome());
         this.itens.add(item);
 
     }
-    public void caminhar(double x, double y){
-        System.out.println("Você foi para o ponto " + x + " e " + y);
-    }
+
     public void usarHabilidade(Habilidade habilidade){
         habilidade.ativarHabilidade();
         energia = energia - habilidade.getCustoDeEnergia();
@@ -94,7 +92,7 @@ public class Personagem {
 
     @Override
     public String toString() {
-        return "Personagem: \n"+ this.nome +", Nível: \n" + this.nivel + ", Saúde: \n" + this.saude + ", Energia: \n" + this.energia;
+        return "\nPersonagem: "+ this.nome +"; \nNível: " + this.nivel + ";\nSaúde: " + this.saude + ";\nEnergia: " + this.energia + ".";
     }
 }
 

@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
 
-        System.out.println("Olá jogador! Por favor, digite o seu nome:");
-        String nomeJogador = read.nextLine(); read.next();
+        System.out.println("Bem-vindo ao Game ROG! Por favor, digite o seu nickname:");
+        String nomeJogador = read.nextLine();
 
         Habilidade habilidadePersonagem = new Habilidade("Edo tensei", "Jutsu fatal a qualquer inimigo", 80, 100);
         Personagem personagem = new Personagem(nomeJogador, habilidadePersonagem);
@@ -40,5 +40,6 @@ public class Main {
 
         MundoVirtual mundoVirtual = new MundoVirtual(personagem, listaDeMissoes, listaDeInimigos);
 
+        mundoVirtual.gerenciarInteracao();
     }
 }

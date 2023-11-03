@@ -17,13 +17,12 @@ public class Missao {
         this.objetivos = objetivos;
     }
 
-    boolean statusDaMissao;
+    boolean statusDaMissao = true;
     public void iniciarMissao(Personagem personagem){
-        System.out.println("A missão " + titulo + " foi iniciada por " + personagem.getNome() + "!");
-        statusDaMissao = true;
+        System.out.println("\nA " + titulo + " foi iniciada por " + personagem.getNome() + "!\n");
     }
     public void completarMissao(Personagem personagem){
-        System.out.println("A missão " + titulo + " foi completada!");
+        System.out.println("A " + titulo + " foi completada!");
         personagem.setItens(this.recompensa);
         statusDaMissao = false;
     }
@@ -69,5 +68,10 @@ public class Missao {
 
     public void setObjetivos(String objetivos) {
         this.objetivos = objetivos;
+    }
+
+    @Override
+    public String toString() {
+        return "Título: " + titulo + ";\nDescrição: " + descricao + ";\nRecompensa: " + recompensa.get(0).getNome() + ";\nObjetivo: " + objetivos + ";\nStatus da missao: " + atualizarMissao() + ".\n";
     }
 }

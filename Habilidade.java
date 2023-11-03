@@ -15,7 +15,7 @@ public class Habilidade {
     }
 
     public void ativarHabilidade(){
-        System.out.println("A habilidade " + nome + " foi ativada!");
+        System.out.println("A habilidade " + nome + " foi ativada!\n");
     }
 
     public String getNome() {
@@ -48,5 +48,10 @@ public class Habilidade {
 
     public void setDano(int dano) {
         this.dano = dano;
+    }
+
+    @Override
+    public String toString() {
+        return "\nHabilidade: " + nome + ";\nDescrição: " + descricao + ";\nCusto de energia: " + custoDeEnergia + ";\nDano: " + dano + ".";
     }
 }

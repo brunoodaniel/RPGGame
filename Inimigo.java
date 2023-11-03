@@ -15,9 +15,9 @@ public class Inimigo {
         this.habilidadeDeCombate = habilidadeDeCombate;
     }
 
-    public void atacar(Personagem personagem){
-        System.out.println("Você atacou o personagem " + personagem.getNome());
-        personagem.setEnergia(personagem.getEnergia() - 10);
+    public void atacar(Personagem personagem, Inimigo inimigo){
+        System.out.println("O personagem " + personagem.getNome() + " foi atacado pelo inimigo " + inimigo.getNome() + "!");
+        personagem.setSaude(personagem.getSaude() - inimigo.getHabilidadeDeCombate().getDano());
     }
 
 
