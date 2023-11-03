@@ -7,13 +7,15 @@ public class Personagem {
     private int nivel;
     private int saude;
     private int energia;
-    private ArrayList<Habilidade> habilidade = new ArrayList<>();
+    private Habilidade habilidade;
     private ArrayList<Item> itens = new ArrayList<>();
 
-    public Personagem(String nome, int nivel, int energia) {
+    public Personagem(String nome,Habilidade habilidade) {
         this.nome = nome;
-        this.nivel = nivel;
-        this.energia = energia;
+        this.nivel = 40;
+        this.saude = 100;
+        this.energia = 100;
+        this.habilidade = habilidade;
     }
 
     public void atacar(Inimigo inimigo){
@@ -61,11 +63,11 @@ public class Personagem {
         this.energia = energia;
     }
 
-    public ArrayList<Habilidade> getHabilidade() {
+    public Habilidade getHabilidade() {
         return habilidade;
     }
 
-    public void setHabilidade(ArrayList<Habilidade> habilidade) {
+    public void setHabilidade(Habilidade habilidade) {
         this.habilidade = habilidade;
     }
 
@@ -78,7 +80,7 @@ public class Personagem {
     }
 
     public String getItens() {
-        if(this.itens.size() != 0){
+        if(!this.itens.isEmpty()){
             for (Item item : this.itens) {
                 return item.getNome();
             }
@@ -89,4 +91,11 @@ public class Personagem {
     public void setItens(ArrayList<Item> itens) {
         this.itens.addAll(itens);
     }
+
+    @Override
+    public String toString() {
+        return "Personagem: \n"+ this.nome +", Nível: \n" + this.nivel + ", Saúde: \n" + this.saude + ", Energia: \n" + this.energia;
+    }
 }
+
+

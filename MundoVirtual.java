@@ -3,66 +3,51 @@ package GameRPG;
 import java.util.ArrayList;
 
 public class MundoVirtual {
-    private int[][] mapaDoMundo;
-    private ArrayList<Personagem> listaDePersonagens;
-    private ArrayList<Missao> listaDeMissoes;
+    private int[] mapaDoMundo;
+    private Personagem personagem;
+    private ArrayList<Missao> missao;
     private ArrayList<Inimigo> listaDeInimigos;
 
-    public MundoVirtual(int linhas, int colunas) {
-        this.mapaDoMundo =  new int[linhas][colunas];
+    public MundoVirtual(Personagem personagem,ArrayList<Missao> missao, ArrayList<Inimigo> listaDeInimigos) {
+        this.mapaDoMundo = new int[] {1, 2, 3};
+        this.personagem = personagem;
+        this.missao = missao;
+        this.listaDeInimigos = listaDeInimigos;
     }
 
     public void gerenciarInteracao(){
 
     }
 
-    public void setMapaDoMundo(int[][] mapaDoMundo) {
-        this.mapaDoMundo = mapaDoMundo;
-    }
-
-    public int[][] getMapaDoMundo() {
+    public int[] getMapaDoMundo() {
         return mapaDoMundo;
     }
 
-    public ArrayList<Personagem> getListaDePersonagens() {
-        return listaDePersonagens;
+    public void setMapaDoMundo(int[] mapaDoMundo) {
+        this.mapaDoMundo = mapaDoMundo;
     }
 
-    public ArrayList<Missao> getListaDeMissoes() {
-        return listaDeMissoes;
+    public Personagem getPersonagem() {
+        return personagem;
+    }
+
+    public void setPersonagem(Personagem personagem) {
+        this.personagem = personagem;
+    }
+
+    public ArrayList<Missao> getMissao() {
+        return missao;
+    }
+
+    public void setMissao(ArrayList<Missao> missao) {
+        this.missao = missao;
     }
 
     public ArrayList<Inimigo> getListaDeInimigos() {
         return listaDeInimigos;
     }
 
-    public void setListaDePersonagens(ArrayList<Personagem> listaDePersonagens) {
-        this.listaDePersonagens = listaDePersonagens;
-    }
-
-    public void setListaDeMissoes(ArrayList<Missao> listaDeMissoes) {
-        this.listaDeMissoes = listaDeMissoes;
-    }
-
     public void setListaDeInimigos(ArrayList<Inimigo> listaDeInimigos) {
         this.listaDeInimigos = listaDeInimigos;
     }
-/* private int[][] minhaMatriz;
-
-    // Construtor da classe
-    public MinhaClasse(int linhas, int colunas) {
-        // Inicializar a matriz com o número de linhas e colunas desejado
-        minhaMatriz = new int[linhas][colunas];
-    }
-
-    // Método para acessar e modificar elementos da matriz
-    public int getElemento(int linha, int coluna) {
-        return minhaMatriz[linha][coluna];
-    }
-
-    public void setElemento(int linha, int coluna, int valor) {
-        minhaMatriz[linha][coluna] = valor;
-    }
-
-    */
 }

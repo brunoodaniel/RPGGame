@@ -4,19 +4,19 @@ public class Habilidade {
     private String nome;
     private String descricao;
     private int custoDeEnergia;
+    private int dano;
 
 
-    public Habilidade(String nome, String descricao, int custoDeEnergia) {
+    public Habilidade(String nome, String descricao, int custoDeEnergia, int dano) {
         this.nome = nome;
         this.descricao = descricao;
         this.custoDeEnergia = custoDeEnergia;
+        this.dano = dano;
     }
 
     public void ativarHabilidade(){
         System.out.println("A habilidade " + nome + " foi ativada!");
-
     }
-
 
     public String getNome() {
         return nome;
@@ -40,5 +40,13 @@ public class Habilidade {
 
     public void setCustoDeEnergia(int custoDeEnergia) {
         this.custoDeEnergia = custoDeEnergia;
+    }
+
+    public int getDano() {
+        return dano;
+    }
+
+    public void setDano(int dano) {
+        this.dano = dano;
     }
 }

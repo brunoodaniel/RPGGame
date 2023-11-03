@@ -1,20 +1,18 @@
 package GameRPG;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Inimigo {
     private String nome;
     private int nivel;
     private int saude;
     private int energia;
-    private ArrayList<Habilidade> habilidadeDeCombate = new ArrayList<>();
+    private Habilidade habilidadeDeCombate;
 
-    public Inimigo(String nome, int nivel, int saude, int energia) {
+    public Inimigo(String nome, int nivel, Habilidade habilidadeDeCombate) {
         this.nome = nome;
         this.nivel = nivel;
-        this.saude = saude;
-        this.energia = energia;
+        this.saude = 100;
+        this.energia = 100;
+        this.habilidadeDeCombate = habilidadeDeCombate;
     }
 
     public void atacar(Personagem personagem){
@@ -39,10 +37,6 @@ public class Inimigo {
         this.nivel = nivel;
     }
 
-    public void setHabilidadeDeCombate(ArrayList<Habilidade> habilidadeDeCombate) {
-        this.habilidadeDeCombate = habilidadeDeCombate;
-    }
-
     public int getSaude() {
         return saude;
     }
@@ -59,8 +53,11 @@ public class Inimigo {
         this.energia = energia;
     }
 
-    public List<Habilidade> getHabilidadeDeCombate() {
+    public Habilidade getHabilidadeDeCombate() {
         return habilidadeDeCombate;
     }
 
+    public void setHabilidadeDeCombate(Habilidade habilidadeDeCombate) {
+        this.habilidadeDeCombate = habilidadeDeCombate;
+    }
 }
