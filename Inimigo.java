@@ -16,10 +16,9 @@ public class Inimigo {
     }
 
     public void atacar(Personagem personagem, Inimigo inimigo){
-        System.out.println("O personagem " + personagem.getNome() + " foi atacado pelo inimigo " + inimigo.getNome() + "!");
+        System.out.println("\nO personagem " + personagem.getNome() + " foi atacado pelo inimigo " + inimigo.getNome() + "!");
         personagem.setSaude(personagem.getSaude() - inimigo.getHabilidadeDeCombate().getDano());
     }
-
 
     public String getNome() {
         return nome;

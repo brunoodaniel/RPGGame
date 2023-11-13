@@ -15,7 +15,7 @@ public class Habilidade {
     }
 
     public void ativarHabilidade(){
-        System.out.println("A habilidade " + nome + " foi ativada!\n");
+        System.out.println("A habilidade " + nome + " foi ativada!");
     }
 
     public String getNome() {

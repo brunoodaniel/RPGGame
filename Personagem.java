@@ -18,9 +18,9 @@ public class Personagem {
         this.habilidade = habilidade;
     }
 
-    public void atacar(Inimigo inimigo){
-        System.out.println("Você atacou o inimigo " + inimigo.getNome());
-        inimigo.setEnergia(getEnergia() - habilidade.getDano());
+    public void atacar(Personagem personagem, Inimigo inimigo){
+        System.out.println("\nVocê atacou o inimigo " + inimigo.getNome());
+        inimigo.setSaude(getSaude() - personagem.getHabilidade().getDano());
     }
     public void pegarItem(Item item){
         System.out.println("Você pegou o item " + item.getNome());
@@ -32,8 +32,8 @@ public class Personagem {
         habilidade.ativarHabilidade();
         energia = energia - habilidade.getCustoDeEnergia();
     }
-    public void usarItem(Item item){
-        item.usarItem();
+    public void usarItem(Personagem personagem, Item item){
+        item.usarItem(personagem);
     }
 
 
@@ -86,8 +86,8 @@ public class Personagem {
         return "Não há nenhum item com este personagem!";
     }
 
-    public void setItens(ArrayList<Item> itens) {
-        this.itens.addAll(itens);
+    public void setItens(Item item) {
+        this.itens.add(item);
     }
 
     @Override

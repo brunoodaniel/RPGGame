@@ -14,8 +14,11 @@ public class Item {
         this.efeitos = efeitos;
     }
 
-    public void usarItem(){
+    public void usarItem(Personagem personagem){
         System.out.println("O item " + nome + " e seus efeitos de " + efeitos + " foram ativados!");
+        personagem.setSaude(100);
+        personagem.setEnergia(100);
+        personagem.setNivel(personagem.getNivel() + 20);
     }
 
 

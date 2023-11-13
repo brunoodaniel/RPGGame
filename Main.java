@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
 
-        System.out.println("Bem-vindo ao Game ROG! Por favor, digite o seu nickname:");
+        System.out.println("Bem-vindo ao Game RPG! Por favor, digite o seu nickname:");
         String nomeJogador = read.nextLine();
 
         Habilidade habilidadePersonagem = new Habilidade("Edo tensei", "Jutsu fatal a qualquer inimigo", 80, 100);
@@ -28,7 +28,6 @@ public class Main {
 
 
         Item pocaoLendaria = new Item("Poção lendária", "Uma poção capaz de regenerar a energia e saúde do seu consumidor", "Cura", "Regeneração geral");
-
 
 
         ArrayList<Missao> listaDeMissoes = new ArrayList<>();
